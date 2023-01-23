@@ -14,8 +14,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available resources to get you started
 
-https://www.codecademy.com/
-https://www.freecodecamp.org/
+##### https://www.codecademy.com/
+
+##### https://www.freecodecamp.org/
 
 ## Available Scripts
 
