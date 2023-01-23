@@ -2,6 +2,21 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Task
+
+#### Scenario 1
+
+- text based social media app
+
+#### Scenario 2
+
+- video based social media app
+
+## Available resources to get you started
+
+https://www.codecademy.com/
+https://www.freecodecamp.org/
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -1,8 +1,7 @@
-import { Container } from "./style.js";
 import { useState, useEffect } from "react";
+import { Container, PostContainer } from "./style.js";
 
 function App() {
-	const [feed, setFeed] = useState();
 	const [feedArray, setFeedArray] = useState([]);
 
 	useEffect(() => {
@@ -17,7 +16,10 @@ function App() {
 			<main>
 				<section>
 					{feedArray.map((feedItem, i) => (
-						<p key={`${i}-feedItem`}>{feedItem}</p>
+						<PostContainer>
+							{/**<p key={`${i}-feedItem`}>{feedItem}</p>*/}
+							<img src={feedItem} />
+						</PostContainer>
 					))}
 				</section>
 				<textarea
