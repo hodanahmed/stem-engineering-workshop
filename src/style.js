@@ -14,4 +14,5 @@ export const PostContainer = styled.div`
 
 export const IconPostContainer = styled.div`
 	display: flex;
+	align-items: center;
 `;

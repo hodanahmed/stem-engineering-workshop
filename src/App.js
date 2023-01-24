@@ -11,7 +11,8 @@ function App() {
 	});
 
 	const handleChange = (e) => {
-			const newValue = e.target.value;
+		const date = format(new Date(), 'h:mmaaa')
+		const newValue = {value: e.target.value, date: date}
 
 			setFeedArray((feedArray) => [...feedArray, newValue]);
 			e.target.value = ''
@@ -20,20 +21,19 @@ function App() {
 	return (
 		<Container>
 			<header>
-				<h1>unintitled</h1>
+				<h1>STEM Workshop</h1>
 			</header>
 
 			<main>
 				<section>
 					{feedArray.map((feedItem, i) => {
-						const date = format(new Date(), 'h:mmaaa')
 						return (
 						<PostContainer>
 							<IconPostContainer>
 							<TiMessage/>
-							<p style={{ paddingLeft: '4px'}}key={`${i}-feedItem`}>{feedItem}</p>
+							<p style={{ paddingLeft: '4px'}}key={`${i}-feedItem`}>{feedItem.value}</p>
 							</IconPostContainer>
-							<span style={{ fontSize: '10px'}}>{date}</span>
+							<span style={{ fontSize: '10px'}}>{feedItem.date}</span>
 						</PostContainer>
 					)})}
 				</section>
@@ -43,7 +43,8 @@ function App() {
 						<label>Text</label>
 						<textarea rows="2"
 							onBlur={(e) => {
-								const newValue = e.target.value;
+								const date = format(new Date(), 'h:mmaaa')
+								const newValue = {value: e.target.value, date: date}
 
 								setFeedArray((feedArray) => [...feedArray, newValue]);
 								e.target.value = ''
