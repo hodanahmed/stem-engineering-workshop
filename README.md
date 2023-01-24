@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### Scenario 2
 
-- video based social media app
+- image based social media app
 
 ## Available resources to get you started
 
