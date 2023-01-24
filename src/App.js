@@ -18,7 +18,7 @@ function App() {
 					{feedArray.map((feedItem, i) => (
 						<PostContainer>
 							{/**<p key={`${i}-feedItem`}>{feedItem}</p>*/}
-							<img src={feedItem} />
+							{/**<img src={feedItem} />*/}
 						</PostContainer>
 					))}
 				</section>
