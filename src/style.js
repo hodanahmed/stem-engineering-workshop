@@ -2,14 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 	p {
-		color: yellow;
-		font-size: 2px;
+		color: black;
+		font-size: 14px;
 	}
+	padding: 10px;
 `;
 
 export const PostContainer = styled.div`
-	img {
-		width: 10px;
-		height: 10px;
-	}
+
+`;
+
+export const IconPostContainer = styled.div`
+	display: flex;
+	align-items: center;
 `;

@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-import { Container, PostContainer } from "./style.js";
+import { Container, PostContainer, IconPostContainer } from "./style.js";
+import { format } from 'date-fns';
+import { TiMessage } from 'react-icons/ti';
 
 function App() {
 	const [feedArray, setFeedArray] = useState([]);
@@ -7,20 +9,33 @@ function App() {
 	useEffect(() => {
 		console.log(feedArray);
 	});
+
+	const handleChange = (e) => {
+		const date = format(new Date(), 'h:mmaaa')
+		const newValue = {value: e.target.value, date: date}
+
+			setFeedArray((feedArray) => [...feedArray, newValue]);
+			e.target.value = ''
+		};
+
 	return (
 		<Container>
 			<header>
-				<h1>unintitled</h1>
+				<h1>STEM Workshop</h1>
 			</header>
 
 			<main>
 				<section>
-					{feedArray.map((feedItem, i) => (
+					{feedArray.map((feedItem, i) => {
+						return (
 						<PostContainer>
-							{/**<p key={`${i}-feedItem`}>{feedItem}</p>*/}
-							{/**<img src={feedItem} />*/}
+							<IconPostContainer>
+							<TiMessage/>
+							<p style={{ paddingLeft: '4px'}}key={`${i}-feedItem`}>{feedItem.value}</p>
+							</IconPostContainer>
+							<span style={{ fontSize: '10px'}}>{feedItem.date}</span>
 						</PostContainer>
-					))}
+					)})}
 				</section>
 
 				<div class="ui form">
@@ -28,13 +43,15 @@ function App() {
 						<label>Text</label>
 						<textarea rows="2"
 							onBlur={(e) => {
-								const newValue = e.target.value;
+								const date = format(new Date(), 'h:mmaaa')
+								const newValue = {value: e.target.value, date: date}
 
 								setFeedArray((feedArray) => [...feedArray, newValue]);
+								e.target.value = ''
 							}}
 						></textarea>
 					</div>
-					<input class="ui submit button" type="submit" onClick={() => {}}></input>
+					<input class="ui submit button" type="submit" onChange={handleChange}></input>
 				</div>
 			</main>
 		</Container>
