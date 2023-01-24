@@ -22,14 +22,20 @@ function App() {
 						</PostContainer>
 					))}
 				</section>
-				<textarea
-					onBlur={(e) => {
-						const newValue = e.target.value;
 
-						setFeedArray((feedArray) => [...feedArray, newValue]);
-					}}
-				></textarea>
-				<input type="submit" value="Post" onClick={() => {}}></input>
+				<div class="ui form">
+					<div class="field">
+						<label>Text</label>
+						<textarea rows="2"
+							onBlur={(e) => {
+								const newValue = e.target.value;
+
+								setFeedArray((feedArray) => [...feedArray, newValue]);
+							}}
+						></textarea>
+					</div>
+					<input class="ui submit button" type="submit" onClick={() => {}}></input>
+				</div>
 			</main>
 		</Container>
 	);
